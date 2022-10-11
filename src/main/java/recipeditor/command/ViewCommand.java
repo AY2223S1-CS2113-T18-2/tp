@@ -5,7 +5,7 @@ import recipeditor.recipe.RecipeList;
 
 public class ViewCommand extends Command {
     public static final String COMMAND_TYPE = "view";
-
+    //unnecessary comment
     private final int index;
 
     /**
