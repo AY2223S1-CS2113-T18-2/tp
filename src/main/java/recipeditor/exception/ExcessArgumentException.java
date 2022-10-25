@@ -1,4 +1,4 @@
 package recipeditor.exception;
 
-public class ExcessArgumentException extends Exception{
+public class ExcessArgumentException extends Exception {
 }

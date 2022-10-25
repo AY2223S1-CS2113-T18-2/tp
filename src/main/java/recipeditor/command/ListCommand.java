@@ -1,6 +1,5 @@
 package recipeditor.command;
 
-import recipeditor.recipe.Recipe;
 import recipeditor.recipe.RecipeList;
 
 public class ListCommand extends Command {

@@ -3,9 +3,6 @@ package recipeditor.recipe;
 import recipeditor.exception.ParseException;
 import recipeditor.ui.Ui;
 
-import java.util.ArrayList;
-import java.util.Objects;
-
 public class Ingredient {
     private static final String ERROR_PARSING = "Error Parsing Ingredients";
     private String name;

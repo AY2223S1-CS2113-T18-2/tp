@@ -1,11 +1,7 @@
 package recipeditor.edit;
 
 import recipeditor.exception.InvalidFlagException;
-import recipeditor.exception.ParseException;
-import recipeditor.parser.FlagParser;
-import recipeditor.parser.FlagType;
 import recipeditor.recipe.Recipe;
-import recipeditor.ui.Ui;
 
 public class Swap extends EditModeCommand {
 

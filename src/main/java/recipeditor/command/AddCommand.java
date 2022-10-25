@@ -5,9 +5,6 @@ import recipeditor.recipe.Recipe;
 import recipeditor.recipe.RecipeList;
 import recipeditor.storage.Storage;
 
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class AddCommand extends Command {
     public static final String COMMAND_TYPE = "/add";
     private Recipe addedRecipe;

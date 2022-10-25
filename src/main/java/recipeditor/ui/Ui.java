@@ -1,11 +1,9 @@
 package recipeditor.ui;
 
-import java.io.File;
-import java.io.IOException;
+import recipeditor.command.CommandResult;
+
 import java.util.NoSuchElementException;
 import java.util.Scanner;
-
-import recipeditor.command.CommandResult;
 
 public class Ui {
 

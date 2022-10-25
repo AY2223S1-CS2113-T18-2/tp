@@ -56,8 +56,7 @@ public class Recipeditor {
 
     private static CommandResult executeCommand(Command command) {
         try {
-            CommandResult result = command.execute();
-            return result;
+            return command.execute();
         } catch (Exception e) {
             Ui.showMessage(e.getMessage());
             throw new RuntimeException(e);

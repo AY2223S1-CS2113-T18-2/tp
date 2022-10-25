@@ -16,8 +16,6 @@ public class AddMode {
     private static final String DONE_REMINDER = "Type \"done\" to finish adding the section";
     private static final String STEPS = "Enter your steps one by one  ";
 
-    private static final String NEXT = "next";
-
     private static final String DONE = "done";
     private static final String ENTER = "ENTERING ADD MODE";
     private static final String EXIT = "EXITING ADD MODE";
@@ -34,23 +32,23 @@ public class AddMode {
         while (!(input.equalsIgnoreCase(DONE) && stage == 4) && stage < 4) {
             switch (stage) {
             case TITLE_STAGE:
-                input = askTitle(input);
+                input = askTitle();
                 break;
             case DESCRIPTION_STAGE:
-                input = askDescription(input);
+                input = askDescription();
                 break;
             case INGREDIENTS_STAGE:
-                input = askIngredients(input);
+                input = askIngredients();
                 break;
             case STEPS_STAGE:
-                input = askSteps(input);
+                input = askSteps();
                 break;
             default:
                 System.out.println("Invalid section! Please type done to exit");
                 break;
             }
         }
-        isValid = (stage >= 3) ? true : false; // Check if all the components are filled
+        isValid = stage >= 3; // Check if all the components are filled
     }
 
     public void exitAddMode() {
@@ -65,27 +63,27 @@ public class AddMode {
         return null;
     }
 
-    private String askTitle(String input) {
+    private String askTitle() {
         Ui.showMessage(TITLE);
-        input = Ui.readInput();
+        String input = Ui.readInput();
         addedRecipe.setTitle(input);
         Ui.showMessageInline("Title: ", addedRecipe.getTitle());
         stage++; // Advance to next stage
         return input;
     }
 
-    private String askDescription(String input) {
+    private String askDescription() {
         Ui.showMessage(DESCRIPTION);
-        input = Ui.readInput();
+        String input = Ui.readInput();
         addedRecipe.setDescription(input);
         Ui.showMessageInline("Description: ", addedRecipe.getDescription());
         stage++; // Advance to next stage
         return input;
     }
 
-    private String askIngredients(String input) {
+    private String askIngredients() {
         Ui.showMessageInline(INGREDIENTS, FORMAT, DONE_REMINDER);
-        input = Ui.readInput();
+        String input = Ui.readInput();
         if (!input.equalsIgnoreCase(DONE)) {
             parsedIngredients(input);
         } else {
@@ -109,9 +107,9 @@ public class AddMode {
         }
     }
 
-    private String askSteps(String input) {
+    private String askSteps() {
         Ui.showMessage(STEPS, DONE_REMINDER);
-        input = Ui.readInput();
+        String input = Ui.readInput();
         if (!input.equalsIgnoreCase(DONE)) {
             addedRecipe.addStep(input);
         } else {
@@ -121,7 +119,6 @@ public class AddMode {
     }
 
     private double convertToDouble(String amount) {
-        double amountDouble = Double.parseDouble(amount);
-        return amountDouble;
+        return Double.parseDouble(amount);
     }
 }

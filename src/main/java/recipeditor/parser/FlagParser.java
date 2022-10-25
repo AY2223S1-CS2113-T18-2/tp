@@ -1,7 +1,5 @@
 package recipeditor.parser;
 
-import recipeditor.recipe.Recipe;
-
 public interface FlagParser {
 
     static FlagType checkFlagType(String[] parsedCommand) {

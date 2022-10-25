@@ -10,10 +10,6 @@ public class RecipeList {
         recipes.addAll(load);
     }
 
-    private RecipeList() {
-        this(null);
-    }
-
     public static Recipe getRecipe(int index) throws IndexOutOfBoundsException {
         return recipes.get(index);
     }
@@ -57,7 +53,7 @@ public class RecipeList {
         case 'i':
             return findRecipeTitlesFromIngredientName(findInput);
         default:
-            return new ArrayList<String>();
+            return new ArrayList<>();
         }
     }
 

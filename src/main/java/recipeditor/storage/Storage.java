@@ -5,7 +5,6 @@ import java.io.FileNotFoundException;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
-import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -67,22 +66,6 @@ public class Storage {
             templateFile();
         } catch (IOException e) {
             logger.log(Level.WARNING, "Error creating folder");
-        }
-    }
-
-    public static void saveRecipe() {
-
-    }
-
-    public static void loadRecipeToFile(String filePath, Recipe recipe) {
-        try {
-            logger.log(Level.INFO, "Loading Recipe to Data File");
-            FileWriter fw = new FileWriter(filePath, true);
-            fw.write(recipe.getRecipeAttributesFormatted());
-            fw.write(Ui.DIVIDER + "\n");
-            fw.close();
-        } catch (IOException ioException) {
-            Ui.showMessage("Error in loading recipes to data file");
         }
     }
 
