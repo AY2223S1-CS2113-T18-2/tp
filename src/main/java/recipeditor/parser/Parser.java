@@ -15,9 +15,7 @@ import recipeditor.command.FindCommand;
 import recipeditor.command.InvalidCommand;
 import recipeditor.recipe.RecipeList;
 import recipeditor.storage.Storage;
-import recipeditor.ui.EditMode;
 import recipeditor.ui.Ui;
-import recipeditor.parser.TextFileParser;
 
 import java.io.FileNotFoundException;
 import java.util.logging.Logger;
