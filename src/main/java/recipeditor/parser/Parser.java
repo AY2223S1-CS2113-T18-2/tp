@@ -37,7 +37,7 @@ public class Parser {
         case DeleteCommand.COMMAND_TYPE:
             return null;
         case EditCommand.COMMAND_TYPE:
-            return parseEditCommand(parsed);
+            return null; //TODO: Edit Command
         case ViewCommand.COMMAND_TYPE:
             return parseListAlterCommand(parsed, commandWord);
         case FindCommand.COMMAND_TYPE:
@@ -86,21 +86,6 @@ public class Parser {
                         + "Try the command in correct format: view/delete <index of task>%n");
                 return new InvalidCommand();
             }
-        }
-        return new InvalidCommand();
-    }
-
-    private static Command parseEditCommand(String[] parsed) {
-        int index = -1;
-        if (parsed.length > 1) {
-            try {
-                index = Integer.parseInt(parsed[1]) - 1;
-            } catch (NumberFormatException n) {
-                index = RecipeList.getRecipeIndexFromTitle(parsed[1]);
-            }
-            EditMode edit = new EditMode();
-            edit.enterEditMode(index);
-            return new EditCommand(edit.exitEditMode(), index, edit.getEditedRecipe());
         }
         return new InvalidCommand();
     }
